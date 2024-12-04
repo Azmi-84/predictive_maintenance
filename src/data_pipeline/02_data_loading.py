@@ -125,6 +125,39 @@ def remove__rnf(df):
         logging.error(f"Error removing Random Failures: {e}")
     return df
 
+
+def analyze_failure_relationship(df):
+    """
+    Analyzing and counting the occurrences of specific failure conditions,
+    logging the row numbers for each condition.
+    """
+    try:
+        required_columns = ['RNF', 'Machine failure']
+        if not all(col in df.columns for col in required_columns):
+            raise ValueError(f"Missing required columns: {required_columns}")
+
+        conditions = {
+            "Random=1, Machine=0": {"count": 0, "rows": []},
+        }
+
+        for index, (random_failure, machine_failure) in enumerate(zip(df['RNF'], df['Machine failure']), start=1):
+            if random_failure == 1 and machine_failure == 0:
+                condition = "Random=1, Machine=0"
+            else:
+                continue
+
+            conditions[condition]["count"] += 1
+            conditions[condition]["rows"].append(index)
+
+        for condition, data in conditions.items():
+            logging.info(f"{condition}: {data['count']} occurrences. Rows: {data['rows']}")
+
+        return conditions
+
+    except Exception as e:
+        logging.error(f"Error analyzing and counting failures: {e}")
+        return None
+
 if __name__ == "__main__":
     file_path = "/home/abdullahalazmi/Downloads/predictive_maintenance/data/raw/kaggle_datasets/ai4i2020.csv"
 
@@ -141,7 +174,9 @@ if __name__ == "__main__":
             # plt.tight_layout()
             # plt.show()
 
-            data = target_anomalies(data)
-            data = remove__rnf(data)
+            # data = target_anomalies(data)
+            # data = remove__rnf(data)
+
+            data = analyze_failure_relationship(data)
     else:
         logging.error(f"File not found: {file_path}")
