@@ -14,6 +14,7 @@ def percentage_of_machines_by_type(df, ax):
             ax.set_title("Percentage of Machines by Type")
             ax.set_xlabel("Machine Type")
             ax.set_ylabel("Percentage")
+            plt.tight_layout()  # Ensure proper space management
         else:
             logging.warning("Column 'Type' not found in the dataset.")
     except Exception as e:
@@ -27,6 +28,7 @@ def product_id_graph(df, ax):
             ax.set_title("Distribution of Product IDs")
             ax.set_xlabel("Product ID")
             ax.set_ylabel("Count")
+            plt.tight_layout()  # Ensure proper space management
         else:
             logging.warning("Column 'Product ID' not found in the dataset.")
     except Exception as e:
@@ -39,7 +41,7 @@ def numeric_features_graph(df, ax):
             logging.warning("No numeric features found in the dataset.")
             return
 
-        fig, axes = plt.subplots(nrows=2, ncols=(len(num_features) + 1) // 2, figsize=(18, 12))
+        fig, axes = plt.subplots(nrows=2, ncols=(len(num_features) + 1) // 2, figsize=(18, 12), constrained_layout=True)
         axes = axes.flatten()
 
         fig.suptitle("Numeric Features Histograms", fontsize=16)
@@ -48,15 +50,16 @@ def numeric_features_graph(df, ax):
             sns.histplot(data=df, x=feature, bins=20, kde=True, ax=axes[i])
             axes[i].set_title(f"Histogram of {feature}")
             axes[i].set_xlabel(feature)
+            plt.tight_layout()  # Ensure proper space management
         
-        fig, axes = plt.subplots(nrows=1, ncols=len(num_features), figsize=(18, 6))
+        fig, axes = plt.subplots(nrows=1, ncols=len(num_features), figsize=(18, 6), constrained_layout=True)
 
         for j, feature in enumerate(num_features):
             sns.boxplot(data=df, y=feature, ax=axes[j])
             axes[j].set_title(f"Boxplot of {feature}")
             axes[j].set_ylabel(feature)
+            plt.tight_layout()  # Ensure proper space management
 
-        plt.tight_layout()
     except Exception as e:
         logging.error(f"Error creating numeric features graph: {e}")
 

@@ -1,23 +1,17 @@
-2024-12-05 03:30:04,151 - INFO - Logging initialized.
-2024-12-05 03:30:04,151 - INFO - File verified: /home/abdullahalazmi/Downloads/predictive_maintenance/data/raw/kaggle_datasets/ai4i2020.csv
-2024-12-05 03:30:04,187 - INFO - File loaded successfully.
-2024-12-05 03:30:04,188 - INFO - Loaded data with 10000 rows and 14 columns.
-2024-12-05 03:30:04,188 - INFO - Data validation completed successfully.
-2024-12-05 03:30:04,190 - ERROR - Error during data loading and preprocessing: rename_columns() got an unexpected keyword argument 'rename_map'
-2024-12-05 03:34:13,837 - INFO - Logging initialized.
-2024-12-05 03:34:13,837 - INFO - File verified: /home/abdullahalazmi/Downloads/predictive_maintenance/data/raw/kaggle_datasets/ai4i2020.csv
-2024-12-05 03:34:13,875 - INFO - File loaded successfully.
-2024-12-05 03:34:13,875 - INFO - Loaded data with 10000 rows and 14 columns.
-2024-12-05 03:34:13,875 - INFO - Data validation completed successfully.
-2024-12-05 03:34:13,878 - INFO - Renamed columns: ['UDI', 'Product ID', 'Type', 'Air temperature', 'Process temperature', 'Rotational speed', 'Torque', 'Tool wear', 'Machine failure', 'TWF', 'HDF', 'PWF', 'OSF', 'RNF']
-2024-12-05 03:34:14,275 - INFO - Percentage of machines by type:
+2024-12-05 04:07:15,889 - INFO - Logging is configured.
+2024-12-05 04:07:15,889 - INFO - Logging initialized.
+2024-12-05 04:07:15,889 - INFO - File verified: /home/abdullahalazmi/Downloads/predictive_maintenance/data/raw/kaggle_datasets/ai4i2020.csv
+2024-12-05 04:07:15,927 - INFO - File loaded successfully.
+2024-12-05 04:07:15,927 - INFO - Loaded data with 10000 rows and 14 columns.
+2024-12-05 04:07:15,929 - INFO - Renamed columns: ['UDI', 'Product ID', 'Type', 'Air temperature', 'Process temperature', 'Rotational speed', 'Torque', 'Tool wear', 'Machine failure', 'TWF', 'HDF', 'PWF', 'OSF', 'RNF']
+2024-12-05 04:07:16,339 - INFO - Percentage of machines by type:
 Type
 L    60.00
 M    29.97
 H    10.03
 Name: proportion, dtype: float64
-2024-12-05 03:34:14,509 - WARNING - Visualization generation failed: numeric_features_graph() missing 1 required positional argument: 'ax'
-2024-12-05 03:34:14,521 - INFO - Derived 'Failure Type' column:
+2024-12-05 04:07:33,958 - INFO - Visualizations displayed in real time.
+2024-12-05 04:07:33,974 - INFO - Derived 'Failure Type' column:
 Failure Type
 Tool Wear Failure           9698
 Heat Dissipation Failure     115
@@ -25,78 +19,30 @@ Power Failure                 91
 Overstrain Failure            78
 Random Failure                18
 Name: count, dtype: int64
-2024-12-05 03:34:14,521 - INFO - Target anomalies identified and mapped.
-2024-12-05 03:34:14,529 - INFO - Removed Random Failures: 18 rows.
-2024-12-05 03:34:14,530 - INFO - Random failures removed from the dataset.
-2024-12-05 03:34:14,538 - INFO - Found 9 inconsistent rows to remove.
-2024-12-05 03:34:14,542 - INFO - Inconsistent failures removed from the dataset.
-2024-12-05 03:34:14,545 - INFO - Random=1, Machine=0: 0 occurrences. Rows: []
-2024-12-05 03:34:14,545 - INFO - Failure analysis: {'Random=1, Machine=0': {'count': 0, 'rows': []}}
-2024-12-05 03:34:14,550 - INFO - Percentage of rows with missing data: 0.000%
-2024-12-05 03:34:14,550 - INFO - Percentage of rows with missing data: 0.000%.
-2024-12-05 03:34:14,726 - INFO - Processed data saved to '/home/abdullahalazmi/Downloads/predictive_maintenance/data/processed/processed_data.csv'.
-2024-12-05 03:34:23,941 - INFO - Logging initialized.
-2024-12-05 03:34:23,941 - INFO - File verified: /home/abdullahalazmi/Downloads/predictive_maintenance/data/raw/kaggle_datasets/ai4i2020.csv
-2024-12-05 03:34:23,978 - INFO - File loaded successfully.
-2024-12-05 03:34:23,978 - INFO - Loaded data with 10000 rows and 14 columns.
-2024-12-05 03:34:23,979 - INFO - Data validation completed successfully.
-2024-12-05 03:34:23,982 - INFO - Renamed columns: ['UDI', 'Product ID', 'Type', 'Air temperature', 'Process temperature', 'Rotational speed', 'Torque', 'Tool wear', 'Machine failure', 'TWF', 'HDF', 'PWF', 'OSF', 'RNF']
-2024-12-05 03:34:23,997 - INFO - Derived 'Failure Type' column:
-Failure Type
-Tool Wear Failure           9698
-Heat Dissipation Failure     115
-Power Failure                 91
-Overstrain Failure            78
-Random Failure                18
-Name: count, dtype: int64
-2024-12-05 03:34:23,998 - INFO - Target anomalies identified and mapped.
-2024-12-05 03:34:24,004 - INFO - Removed Random Failures: 18 rows.
-2024-12-05 03:34:24,005 - INFO - Random failures removed from the dataset.
-2024-12-05 03:34:24,013 - INFO - Found 9 inconsistent rows to remove.
-2024-12-05 03:34:24,016 - INFO - Inconsistent failures removed from the dataset.
-2024-12-05 03:34:24,019 - INFO - Random=1, Machine=0: 0 occurrences. Rows: []
-2024-12-05 03:34:24,019 - INFO - Failure analysis: {'Random=1, Machine=0': {'count': 0, 'rows': []}}
-2024-12-05 03:34:24,025 - INFO - Percentage of rows with missing data: 0.000%
-2024-12-05 03:34:24,025 - INFO - Percentage of rows with missing data: 0.000%.
-2024-12-05 03:34:24,182 - INFO - Processed data saved to '/home/abdullahalazmi/Downloads/predictive_maintenance/data/processed/processed_data.csv'.
-2024-12-05 03:34:47,723 - INFO - Logging initialized.
-2024-12-05 03:34:47,723 - INFO - File verified: /home/abdullahalazmi/Downloads/predictive_maintenance/data/raw/kaggle_datasets/ai4i2020.csv
-2024-12-05 03:34:47,759 - INFO - File loaded successfully.
-2024-12-05 03:34:47,759 - INFO - Loaded data with 10000 rows and 14 columns.
-2024-12-05 03:34:47,759 - INFO - Data validation completed successfully.
-2024-12-05 03:34:47,762 - INFO - Renamed columns: ['UDI', 'Product ID', 'Type', 'Air temperature', 'Process temperature', 'Rotational speed', 'Torque', 'Tool wear', 'Machine failure', 'TWF', 'HDF', 'PWF', 'OSF', 'RNF']
-2024-12-05 03:34:47,774 - INFO - Derived 'Failure Type' column:
-Failure Type
-Tool Wear Failure           9698
-Heat Dissipation Failure     115
-Power Failure                 91
-Overstrain Failure            78
-Random Failure                18
-Name: count, dtype: int64
-2024-12-05 03:34:47,774 - INFO - Target anomalies identified and mapped.
-2024-12-05 03:34:47,780 - INFO - Removed Random Failures: 18 rows.
-2024-12-05 03:34:47,781 - INFO - Random failures removed from the dataset.
-2024-12-05 03:34:47,787 - INFO - Found 9 inconsistent rows to remove.
-2024-12-05 03:34:47,790 - INFO - Inconsistent failures removed from the dataset.
-2024-12-05 03:34:47,793 - INFO - Random=1, Machine=0: 0 occurrences. Rows: []
-2024-12-05 03:34:47,793 - INFO - Failure analysis: {'Random=1, Machine=0': {'count': 0, 'rows': []}}
-2024-12-05 03:34:47,799 - INFO - Percentage of rows with missing data: 0.000%
-2024-12-05 03:34:47,799 - INFO - Percentage of rows with missing data: 0.000%.
-2024-12-05 03:34:47,997 - INFO - Processed data saved to '/home/abdullahalazmi/Downloads/predictive_maintenance/data/processed/processed_data.csv'.
-2024-12-05 03:35:27,465 - INFO - Logging initialized.
-2024-12-05 03:35:27,465 - INFO - File verified: /home/abdullahalazmi/Downloads/predictive_maintenance/data/raw/kaggle_datasets/ai4i2020.csv
-2024-12-05 03:35:27,499 - INFO - File loaded successfully.
-2024-12-05 03:35:27,499 - INFO - Loaded data with 10000 rows and 14 columns.
-2024-12-05 03:35:27,499 - INFO - Data validation completed successfully.
-2024-12-05 03:35:27,502 - INFO - Renamed columns: ['UDI', 'Product ID', 'Type', 'Air temperature', 'Process temperature', 'Rotational speed', 'Torque', 'Tool wear', 'Machine failure', 'TWF', 'HDF', 'PWF', 'OSF', 'RNF']
-2024-12-05 03:35:27,844 - INFO - Percentage of machines by type:
+2024-12-05 04:07:33,974 - INFO - Target anomalies identified and mapped.
+2024-12-05 04:07:33,982 - INFO - Removed Random Failures: 18 rows.
+2024-12-05 04:07:33,982 - INFO - Random failures removed from the dataset.
+2024-12-05 04:07:33,994 - INFO - Found 9 inconsistent rows to remove.
+2024-12-05 04:07:33,997 - INFO - Inconsistent failures removed from the dataset.
+2024-12-05 04:07:34,000 - INFO - Random=1, Machine=0: 0 occurrences. Rows: []
+2024-12-05 04:07:34,000 - INFO - Failure analysis: {'Random=1, Machine=0': {'count': 0, 'rows': []}}
+2024-12-05 04:07:34,006 - INFO - Percentage of rows with missing data: 0.000%
+2024-12-05 04:07:34,006 - INFO - Percentage of rows with missing data: 0.000%.
+2024-12-05 04:07:34,236 - INFO - Processed data saved to '/home/abdullahalazmi/Downloads/predictive_maintenance/data/processed/processed_data.csv'.
+2024-12-05 04:25:15,137 - INFO - Logging is configured.
+2024-12-05 04:25:15,137 - INFO - Logging initialized.
+2024-12-05 04:25:15,137 - INFO - File verified: /home/abdullahalazmi/Downloads/predictive_maintenance/data/raw/kaggle_datasets/ai4i2020.csv
+2024-12-05 04:25:15,174 - INFO - File loaded successfully.
+2024-12-05 04:25:15,175 - INFO - Loaded data with 10000 rows and 14 columns.
+2024-12-05 04:25:15,178 - INFO - Renamed columns: ['UDI', 'Product ID', 'Type', 'Air temperature', 'Process temperature', 'Rotational speed', 'Torque', 'Tool wear', 'Machine failure', 'TWF', 'HDF', 'PWF', 'OSF', 'RNF']
+2024-12-05 04:25:15,532 - INFO - Percentage of machines by type:
 Type
 L    60.00
 M    29.97
 H    10.03
 Name: proportion, dtype: float64
-2024-12-05 03:35:28,077 - WARNING - Visualization generation failed: numeric_features_graph() missing 1 required positional argument: 'ax'
-2024-12-05 03:35:28,086 - INFO - Derived 'Failure Type' column:
+2024-12-05 04:25:35,015 - INFO - Visualizations displayed in real time.
+2024-12-05 04:25:35,031 - INFO - Derived 'Failure Type' column:
 Failure Type
 Tool Wear Failure           9698
 Heat Dissipation Failure     115
@@ -104,247 +50,13 @@ Power Failure                 91
 Overstrain Failure            78
 Random Failure                18
 Name: count, dtype: int64
-2024-12-05 03:35:28,087 - INFO - Target anomalies identified and mapped.
-2024-12-05 03:35:28,093 - INFO - Removed Random Failures: 18 rows.
-2024-12-05 03:35:28,093 - INFO - Random failures removed from the dataset.
-2024-12-05 03:35:28,100 - INFO - Found 9 inconsistent rows to remove.
-2024-12-05 03:35:28,102 - INFO - Inconsistent failures removed from the dataset.
-2024-12-05 03:35:28,104 - INFO - Random=1, Machine=0: 0 occurrences. Rows: []
-2024-12-05 03:35:28,105 - INFO - Failure analysis: {'Random=1, Machine=0': {'count': 0, 'rows': []}}
-2024-12-05 03:35:28,108 - INFO - Percentage of rows with missing data: 0.000%
-2024-12-05 03:35:28,108 - INFO - Percentage of rows with missing data: 0.000%.
-2024-12-05 03:35:28,273 - INFO - Processed data saved to '/home/abdullahalazmi/Downloads/predictive_maintenance/data/processed/processed_data.csv'.
-2024-12-05 03:41:36,821 - INFO - Logging initialized.
-2024-12-05 03:41:36,821 - INFO - File verified: /home/abdullahalazmi/Downloads/predictive_maintenance/data/raw/kaggle_datasets/ai4i2020.csv
-2024-12-05 03:41:36,854 - INFO - File loaded successfully.
-2024-12-05 03:41:36,854 - INFO - Loaded data with 10000 rows and 14 columns.
-2024-12-05 03:41:36,855 - INFO - Data validation completed successfully.
-2024-12-05 03:41:36,857 - INFO - Renamed columns: ['UDI', 'Product ID', 'Type', 'Air temperature', 'Process temperature', 'Rotational speed', 'Torque', 'Tool wear', 'Machine failure', 'TWF', 'HDF', 'PWF', 'OSF', 'RNF']
-2024-12-05 03:41:36,870 - INFO - Derived 'Failure Type' column:
-Failure Type
-Tool Wear Failure           9698
-Heat Dissipation Failure     115
-Power Failure                 91
-Overstrain Failure            78
-Random Failure                18
-Name: count, dtype: int64
-2024-12-05 03:41:36,870 - INFO - Target anomalies identified and mapped.
-2024-12-05 03:41:36,876 - INFO - Removed Random Failures: 18 rows.
-2024-12-05 03:41:36,877 - INFO - Random failures removed from the dataset.
-2024-12-05 03:41:36,884 - INFO - Found 9 inconsistent rows to remove.
-2024-12-05 03:41:36,887 - INFO - Inconsistent failures removed from the dataset.
-2024-12-05 03:41:36,889 - INFO - Random=1, Machine=0: 0 occurrences. Rows: []
-2024-12-05 03:41:36,889 - INFO - Failure analysis: {'Random=1, Machine=0': {'count': 0, 'rows': []}}
-2024-12-05 03:41:36,894 - INFO - Percentage of rows with missing data: 0.000%
-2024-12-05 03:41:36,894 - INFO - Percentage of rows with missing data: 0.000%.
-2024-12-05 03:41:37,083 - INFO - Processed data saved to '/home/abdullahalazmi/Downloads/predictive_maintenance/data/processed/processed_data.csv'.
-2024-12-05 03:41:50,913 - INFO - Logging initialized.
-2024-12-05 03:41:50,914 - INFO - File verified: /home/abdullahalazmi/Downloads/predictive_maintenance/data/raw/kaggle_datasets/ai4i2020.csv
-2024-12-05 03:41:50,950 - INFO - File loaded successfully.
-2024-12-05 03:41:50,950 - INFO - Loaded data with 10000 rows and 14 columns.
-2024-12-05 03:41:50,950 - INFO - Data validation completed successfully.
-2024-12-05 03:41:50,953 - INFO - Renamed columns: ['UDI', 'Product ID', 'Type', 'Air temperature', 'Process temperature', 'Rotational speed', 'Torque', 'Tool wear', 'Machine failure', 'TWF', 'HDF', 'PWF', 'OSF', 'RNF']
-2024-12-05 03:41:51,336 - INFO - Percentage of machines by type:
-Type
-L    60.00
-M    29.97
-H    10.03
-Name: proportion, dtype: float64
-2024-12-05 03:41:51,552 - WARNING - Visualization generation failed: numeric_features_graph() missing 1 required positional argument: 'ax'
-2024-12-05 03:41:51,562 - INFO - Derived 'Failure Type' column:
-Failure Type
-Tool Wear Failure           9698
-Heat Dissipation Failure     115
-Power Failure                 91
-Overstrain Failure            78
-Random Failure                18
-Name: count, dtype: int64
-2024-12-05 03:41:51,563 - INFO - Target anomalies identified and mapped.
-2024-12-05 03:41:51,569 - INFO - Removed Random Failures: 18 rows.
-2024-12-05 03:41:51,569 - INFO - Random failures removed from the dataset.
-2024-12-05 03:41:51,576 - INFO - Found 9 inconsistent rows to remove.
-2024-12-05 03:41:51,580 - INFO - Inconsistent failures removed from the dataset.
-2024-12-05 03:41:51,582 - INFO - Random=1, Machine=0: 0 occurrences. Rows: []
-2024-12-05 03:41:51,582 - INFO - Failure analysis: {'Random=1, Machine=0': {'count': 0, 'rows': []}}
-2024-12-05 03:41:51,586 - INFO - Percentage of rows with missing data: 0.000%
-2024-12-05 03:41:51,586 - INFO - Percentage of rows with missing data: 0.000%.
-2024-12-05 03:41:51,754 - INFO - Processed data saved to '/home/abdullahalazmi/Downloads/predictive_maintenance/data/processed/processed_data.csv'.
-2024-12-05 03:48:02,162 - INFO - Logging is configured.
-2024-12-05 03:48:02,162 - INFO - Logging initialized.
-2024-12-05 03:48:02,163 - INFO - File verified: /home/abdullahalazmi/Downloads/predictive_maintenance/data/raw/kaggle_datasets/ai4i2020.csv
-2024-12-05 03:48:02,196 - INFO - File loaded successfully.
-2024-12-05 03:48:02,196 - INFO - Loaded data with 10000 rows and 14 columns.
-2024-12-05 03:48:02,199 - INFO - Renamed columns: ['UDI', 'Product ID', 'Type', 'Air temperature', 'Process temperature', 'Rotational speed', 'Torque', 'Tool wear', 'Machine failure', 'TWF', 'HDF', 'PWF', 'OSF', 'RNF']
-2024-12-05 03:48:02,211 - INFO - Derived 'Failure Type' column:
-Failure Type
-Tool Wear Failure           9698
-Heat Dissipation Failure     115
-Power Failure                 91
-Overstrain Failure            78
-Random Failure                18
-Name: count, dtype: int64
-2024-12-05 03:48:02,211 - INFO - Target anomalies identified and mapped.
-2024-12-05 03:48:02,217 - INFO - Removed Random Failures: 18 rows.
-2024-12-05 03:48:02,218 - INFO - Random failures removed from the dataset.
-2024-12-05 03:48:02,225 - INFO - Found 9 inconsistent rows to remove.
-2024-12-05 03:48:02,228 - INFO - Inconsistent failures removed from the dataset.
-2024-12-05 03:48:02,230 - INFO - Random=1, Machine=0: 0 occurrences. Rows: []
-2024-12-05 03:48:02,230 - INFO - Failure analysis: {'Random=1, Machine=0': {'count': 0, 'rows': []}}
-2024-12-05 03:48:02,235 - INFO - Percentage of rows with missing data: 0.000%
-2024-12-05 03:48:02,235 - INFO - Percentage of rows with missing data: 0.000%.
-2024-12-05 03:48:02,386 - INFO - Processed data saved to '/home/abdullahalazmi/Downloads/predictive_maintenance/data/processed/processed_data.csv'.
-2024-12-05 03:48:50,322 - INFO - Logging is configured.
-2024-12-05 03:48:50,322 - INFO - Logging initialized.
-2024-12-05 03:48:50,322 - INFO - File verified: /home/abdullahalazmi/Downloads/predictive_maintenance/data/raw/kaggle_datasets/ai4i2020.csv
-2024-12-05 03:48:50,360 - INFO - File loaded successfully.
-2024-12-05 03:48:50,360 - INFO - Loaded data with 10000 rows and 14 columns.
-2024-12-05 03:48:50,364 - INFO - Renamed columns: ['UDI', 'Product ID', 'Type', 'Air temperature', 'Process temperature', 'Rotational speed', 'Torque', 'Tool wear', 'Machine failure', 'TWF', 'HDF', 'PWF', 'OSF', 'RNF']
-2024-12-05 03:48:50,767 - INFO - Percentage of machines by type:
-Type
-L    60.00
-M    29.97
-H    10.03
-Name: proportion, dtype: float64
-2024-12-05 03:48:59,015 - INFO - Visualizations displayed in real time.
-2024-12-05 03:48:59,032 - INFO - Derived 'Failure Type' column:
-Failure Type
-Tool Wear Failure           9698
-Heat Dissipation Failure     115
-Power Failure                 91
-Overstrain Failure            78
-Random Failure                18
-Name: count, dtype: int64
-2024-12-05 03:48:59,033 - INFO - Target anomalies identified and mapped.
-2024-12-05 03:48:59,041 - INFO - Removed Random Failures: 18 rows.
-2024-12-05 03:48:59,042 - INFO - Random failures removed from the dataset.
-2024-12-05 03:48:59,051 - INFO - Found 9 inconsistent rows to remove.
-2024-12-05 03:48:59,056 - INFO - Inconsistent failures removed from the dataset.
-2024-12-05 03:48:59,059 - INFO - Random=1, Machine=0: 0 occurrences. Rows: []
-2024-12-05 03:48:59,060 - INFO - Failure analysis: {'Random=1, Machine=0': {'count': 0, 'rows': []}}
-2024-12-05 03:48:59,065 - INFO - Percentage of rows with missing data: 0.000%
-2024-12-05 03:48:59,066 - INFO - Percentage of rows with missing data: 0.000%.
-2024-12-05 03:48:59,319 - INFO - Processed data saved to '/home/abdullahalazmi/Downloads/predictive_maintenance/data/processed/processed_data.csv'.
-2024-12-05 03:52:34,387 - INFO - Logging is configured.
-2024-12-05 03:52:34,387 - INFO - Logging initialized.
-2024-12-05 03:52:34,387 - INFO - File verified: /home/abdullahalazmi/Downloads/predictive_maintenance/data/raw/kaggle_datasets/ai4i2020.csv
-2024-12-05 03:52:34,421 - INFO - File loaded successfully.
-2024-12-05 03:52:34,421 - INFO - Loaded data with 10000 rows and 14 columns.
-2024-12-05 03:52:34,425 - INFO - Percentage of rows with missing data: 0.000%
-2024-12-05 03:52:34,425 - INFO - Percentage of rows with missing data: 0.000%.
-2024-12-05 03:52:34,431 - INFO - Renamed columns: ['UDI', 'Product ID', 'Type', 'Air temperature', 'Process temperature', 'Rotational speed', 'Torque', 'Tool wear', 'Machine failure', 'TWF', 'HDF', 'PWF', 'OSF', 'RNF']
-2024-12-05 03:52:34,761 - INFO - Percentage of machines by type:
-Type
-L    60.00
-M    29.97
-H    10.03
-Name: proportion, dtype: float64
-2024-12-05 03:52:38,645 - INFO - Visualizations displayed in real time.
-2024-12-05 03:52:38,663 - INFO - Derived 'Failure Type' column:
-Failure Type
-Tool Wear Failure           9698
-Heat Dissipation Failure     115
-Power Failure                 91
-Overstrain Failure            78
-Random Failure                18
-Name: count, dtype: int64
-2024-12-05 03:52:38,663 - INFO - Target anomalies identified and mapped.
-2024-12-05 03:52:38,671 - INFO - Removed Random Failures: 18 rows.
-2024-12-05 03:52:38,672 - INFO - Random failures removed from the dataset.
-2024-12-05 03:52:38,679 - INFO - Found 9 inconsistent rows to remove.
-2024-12-05 03:52:38,682 - INFO - Inconsistent failures removed from the dataset.
-2024-12-05 03:52:38,684 - INFO - Random=1, Machine=0: 0 occurrences. Rows: []
-2024-12-05 03:52:38,684 - INFO - Failure analysis: {'Random=1, Machine=0': {'count': 0, 'rows': []}}
-2024-12-05 03:52:38,857 - INFO - Processed data saved to '/home/abdullahalazmi/Downloads/predictive_maintenance/data/processed/processed_data.csv'.
-2024-12-05 03:58:17,294 - INFO - Logging is configured.
-2024-12-05 03:58:17,295 - INFO - Logging initialized.
-2024-12-05 03:58:17,295 - INFO - File verified: /home/abdullahalazmi/Downloads/predictive_maintenance/data/raw/kaggle_datasets/ai4i2020.csv
-2024-12-05 03:58:17,330 - INFO - File loaded successfully.
-2024-12-05 03:58:17,331 - INFO - Loaded data with 10000 rows and 14 columns.
-2024-12-05 03:58:17,334 - INFO - Renamed columns: ['UDI', 'Product ID', 'Type', 'Air temperature', 'Process temperature', 'Rotational speed', 'Torque', 'Tool wear', 'Machine failure', 'TWF', 'HDF', 'PWF', 'OSF', 'RNF']
-2024-12-05 03:58:17,688 - INFO - Percentage of machines by type:
-Type
-L    60.00
-M    29.97
-H    10.03
-Name: proportion, dtype: float64
-2024-12-05 03:58:25,647 - INFO - Visualizations displayed in real time.
-2024-12-05 03:58:25,665 - INFO - Derived 'Failure Type' column:
-Failure Type
-Tool Wear Failure           9698
-Heat Dissipation Failure     115
-Power Failure                 91
-Overstrain Failure            78
-Random Failure                18
-Name: count, dtype: int64
-2024-12-05 03:58:25,666 - INFO - Target anomalies identified and mapped.
-2024-12-05 03:58:25,674 - INFO - Removed Random Failures: 18 rows.
-2024-12-05 03:58:25,674 - INFO - Random failures removed from the dataset.
-2024-12-05 03:58:25,683 - INFO - Found 9 inconsistent rows to remove.
-2024-12-05 03:58:25,687 - INFO - Inconsistent failures removed from the dataset.
-2024-12-05 03:58:25,690 - INFO - Random=1, Machine=0: 0 occurrences. Rows: []
-2024-12-05 03:58:25,690 - INFO - Failure analysis: {'Random=1, Machine=0': {'count': 0, 'rows': []}}
-2024-12-05 03:58:25,695 - INFO - Percentage of rows with missing data: 0.000%
-2024-12-05 03:58:25,696 - INFO - Percentage of rows with missing data: 0.000%.
-2024-12-05 03:58:25,932 - INFO - Processed data saved to '/home/abdullahalazmi/Downloads/predictive_maintenance/data/processed/processed_data.csv'.
-2024-12-05 04:00:31,801 - INFO - Logging is configured.
-2024-12-05 04:00:31,801 - INFO - Logging initialized.
-2024-12-05 04:00:31,802 - INFO - File verified: /home/abdullahalazmi/Downloads/predictive_maintenance/data/raw/kaggle_datasets/ai4i2020.csv
-2024-12-05 04:00:31,840 - INFO - File loaded successfully.
-2024-12-05 04:00:31,840 - INFO - Loaded data with 10000 rows and 14 columns.
-2024-12-05 04:00:31,843 - INFO - Renamed columns: ['UDI', 'Product ID', 'Type', 'Air temperature', 'Process temperature', 'Rotational speed', 'Torque', 'Tool wear', 'Machine failure', 'TWF', 'HDF', 'PWF', 'OSF', 'RNF']
-2024-12-05 04:00:32,215 - INFO - Percentage of machines by type:
-Type
-L    60.00
-M    29.97
-H    10.03
-Name: proportion, dtype: float64
-2024-12-05 04:00:39,713 - WARNING - Failed to generate visualizations: numeric_features_graph() takes 1 positional argument but 2 were given
-2024-12-05 04:00:39,730 - INFO - Derived 'Failure Type' column:
-Failure Type
-Tool Wear Failure           9698
-Heat Dissipation Failure     115
-Power Failure                 91
-Overstrain Failure            78
-Random Failure                18
-Name: count, dtype: int64
-2024-12-05 04:00:39,731 - INFO - Target anomalies identified and mapped.
-2024-12-05 04:00:39,740 - INFO - Removed Random Failures: 18 rows.
-2024-12-05 04:00:39,740 - INFO - Random failures removed from the dataset.
-2024-12-05 04:00:39,748 - INFO - Found 9 inconsistent rows to remove.
-2024-12-05 04:00:39,752 - INFO - Inconsistent failures removed from the dataset.
-2024-12-05 04:00:39,754 - INFO - Random=1, Machine=0: 0 occurrences. Rows: []
-2024-12-05 04:00:39,755 - INFO - Failure analysis: {'Random=1, Machine=0': {'count': 0, 'rows': []}}
-2024-12-05 04:00:39,760 - INFO - Percentage of rows with missing data: 0.000%
-2024-12-05 04:00:39,760 - INFO - Percentage of rows with missing data: 0.000%.
-2024-12-05 04:00:39,989 - INFO - Processed data saved to '/home/abdullahalazmi/Downloads/predictive_maintenance/data/processed/processed_data.csv'.
-2024-12-05 04:02:33,492 - INFO - Logging is configured.
-2024-12-05 04:02:33,492 - INFO - Logging initialized.
-2024-12-05 04:02:33,493 - INFO - File verified: /home/abdullahalazmi/Downloads/predictive_maintenance/data/raw/kaggle_datasets/ai4i2020.csv
-2024-12-05 04:02:33,526 - INFO - File loaded successfully.
-2024-12-05 04:02:33,526 - INFO - Loaded data with 10000 rows and 14 columns.
-2024-12-05 04:02:33,528 - INFO - Renamed columns: ['UDI', 'Product ID', 'Type', 'Air temperature', 'Process temperature', 'Rotational speed', 'Torque', 'Tool wear', 'Machine failure', 'TWF', 'HDF', 'PWF', 'OSF', 'RNF']
-2024-12-05 04:02:33,872 - INFO - Percentage of machines by type:
-Type
-L    60.00
-M    29.97
-H    10.03
-Name: proportion, dtype: float64
-2024-12-05 04:03:29,660 - INFO - Visualizations displayed in real time.
-2024-12-05 04:03:29,676 - INFO - Derived 'Failure Type' column:
-Failure Type
-Tool Wear Failure           9698
-Heat Dissipation Failure     115
-Power Failure                 91
-Overstrain Failure            78
-Random Failure                18
-Name: count, dtype: int64
-2024-12-05 04:03:29,676 - INFO - Target anomalies identified and mapped.
-2024-12-05 04:03:29,684 - INFO - Removed Random Failures: 18 rows.
-2024-12-05 04:03:29,685 - INFO - Random failures removed from the dataset.
-2024-12-05 04:03:29,693 - INFO - Found 9 inconsistent rows to remove.
-2024-12-05 04:03:29,698 - INFO - Inconsistent failures removed from the dataset.
-2024-12-05 04:03:29,701 - INFO - Random=1, Machine=0: 0 occurrences. Rows: []
-2024-12-05 04:03:29,701 - INFO - Failure analysis: {'Random=1, Machine=0': {'count': 0, 'rows': []}}
-2024-12-05 04:03:29,706 - INFO - Percentage of rows with missing data: 0.000%
-2024-12-05 04:03:29,706 - INFO - Percentage of rows with missing data: 0.000%.
-2024-12-05 04:03:29,888 - INFO - Processed data saved to '/home/abdullahalazmi/Downloads/predictive_maintenance/data/processed/processed_data.csv'.
+2024-12-05 04:25:35,033 - INFO - Target anomalies identified and mapped.
+2024-12-05 04:25:35,044 - INFO - Removed Random Failures: 18 rows.
+2024-12-05 04:25:35,045 - INFO - Random failures removed from the dataset.
+2024-12-05 04:25:35,056 - INFO - Found 9 inconsistent rows to remove.
+2024-12-05 04:25:35,060 - INFO - Inconsistent failures removed from the dataset.
+2024-12-05 04:25:35,065 - INFO - Random=1, Machine=0: 0 occurrences. Rows: []
+2024-12-05 04:25:35,066 - INFO - Failure analysis: {'Random=1, Machine=0': {'count': 0, 'rows': []}}
+2024-12-05 04:25:35,071 - INFO - Percentage of rows with missing data: 0.000%
+2024-12-05 04:25:35,072 - INFO - Percentage of rows with missing data: 0.000%.
+2024-12-05 04:25:35,284 - INFO - Processed data saved to '/home/abdullahalazmi/Downloads/predictive_maintenance/data/processed/processed_data.csv'.

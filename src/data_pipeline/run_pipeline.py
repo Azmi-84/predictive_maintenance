@@ -11,6 +11,11 @@ from data_preprocessing import analyze_failure_relationship
 from data_visualization import percentage_of_machines_by_type, product_id_graph, numeric_features_graph
 import matplotlib.pyplot as plt
 
+# Initialize logging once at the beginning
+log_file = setup_logging_directory("/desired/log/directory")
+setup_logging(log_file=log_file)
+logger = logging.getLogger(__name__)
+
 def verify_file(file_path, expected_hash=None):
     if not os.path.isfile(file_path):
         raise FileNotFoundError(f"File not found: {file_path}")
@@ -42,10 +47,6 @@ def setup_logging_directory(output_path):
     return os.path.join(log_dir, "pipeline.log")
 
 def main(file_path, output_path, enable_visualizations=True):
-    log_file = setup_logging_directory(output_path)
-    setup_logging(log_file=log_file)
-    logger = logging.getLogger(__name__)
-
     logger.info("Logging initialized.")
 
     try:
@@ -70,18 +71,16 @@ def main(file_path, output_path, enable_visualizations=True):
     # Step 2: Optional real-time visualizations
     if enable_visualizations:
         try:
-            fig, axes = plt.subplots(1, 2, figsize=(14, 7))
+            fig, axes = plt.subplots(1, 2, figsize=(14, 7), constrained_layout=True)
             percentage_of_machines_by_type(data, axes[0])
             product_id_graph(data, axes[1])
             plt.tight_layout()
             plt.show()
-            plt.pause(0.001)  # Keeps the GUI event loop active for real-time display
-            
-            fig, axes = plt.subplots(1, 1, figsize=(14, 7))
-            numeric_features_graph(data, axes)
+
+            fig, ax = plt.subplots(figsize=(14, 7), constrained_layout=True)
+            numeric_features_graph(data, ax)
             plt.tight_layout()
             plt.show()
-            plt.pause(0.001)  # Keeps the GUI event loop active for real-time display
 
             logger.info("Visualizations displayed in real time.")
         except Exception as e:
