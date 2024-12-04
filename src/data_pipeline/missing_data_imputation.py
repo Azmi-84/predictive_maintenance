@@ -1,6 +1,16 @@
 import logging
 from config import COLUMNS
 
+def setup_logging():
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+def validate_dataset(df, required_columns):
+    missing_columns = [col for col in required_columns if col not in df.columns]
+    if missing_columns:
+        logging.error(f"Missing required columns: {missing_columns}")
+        return False
+    return True
+
 def target_anomalies(df):
     if not validate_dataset(df, COLUMNS["failure_columns"]):
         return df
@@ -30,3 +40,6 @@ def remove_rnf(df):
     except Exception as e:
         logging.error(f"Error removing Random Failures: {e}")
     return df
+
+if __name__ == "__main__":
+    setup_logging()

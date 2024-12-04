@@ -1,5 +1,8 @@
 import logging
 
+def setup_logging():
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
 def validate_dataset(df, required_columns):
     missing_columns = [col for col in required_columns if col not in df.columns]
     if missing_columns:
@@ -21,3 +24,6 @@ def analyze_failure_relationship(df):
     except Exception as e:
         logging.error(f"Error analyzing and counting failures: {e}")
         return None
+
+if __name__ == "__main__":
+    setup_logging()

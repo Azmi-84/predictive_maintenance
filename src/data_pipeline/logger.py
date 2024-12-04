@@ -53,3 +53,6 @@ def filter_dataframe(df, column_name, condition):
     except Exception as e:
         logging.error(f"Error filtering DataFrame: {e}")
         return df
+
+if __name__ == "__main__":
+    setup_logging()

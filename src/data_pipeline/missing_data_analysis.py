@@ -1,5 +1,8 @@
 import logging
 
+def setup_logging():
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
 def global_percentage_of_removed_data(df):
     try:
         total_rows = df.shape[0]
@@ -25,3 +28,6 @@ def remove_inconsistent_failures(df):
     except Exception as e:
         logging.error(f"Error removing inconsistent failures: {e}")
     return df
+
+if __name__ == "__main__":
+    setup_logging()

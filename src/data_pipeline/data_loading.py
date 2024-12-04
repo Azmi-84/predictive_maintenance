@@ -2,6 +2,9 @@ import pandas as pd
 import logging
 from config import COLUMNS
 
+def setup_logging():
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
 def load_data(file_path):
     try:
         df = pd.read_csv(file_path)
@@ -30,3 +33,6 @@ def rename_columns(df):
     except Exception as e:
         logging.error(f"Error renaming columns: {e}")
     return df
+
+if __name__ == "__main__":
+    setup_logging()
