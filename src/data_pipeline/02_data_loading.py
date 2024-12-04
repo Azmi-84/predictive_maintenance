@@ -15,13 +15,13 @@ def load_data(file_path):
         return None
 
     logging.info('Initial data overview:')
-    df.info()
+    # df.info()
 
     n = df.shape[0]
     unique_products = df['Product ID'].nunique() if 'Product ID' in df.columns else 0
     has_duplicates = unique_products != n
     logging.info(f"Check for duplicate Product IDs: {'Found duplicates' if has_duplicates else 'No duplicates'}")
-    logging.info(f"Original columns: {df.columns.tolist()}")
+    # logging.info(f"Original columns: {df.columns.tolist()}")
 
     return df
 
@@ -35,7 +35,7 @@ def num_to_float(df):
         else:
             logging.warning(f"Column {col} not found in the dataset.")
     
-    logging.info(f"Updated dtypes: {df.dtypes}")
+    # logging.info(f"Updated dtypes: {df.dtypes}")
     return df
 
 def rename_columns(df):
@@ -86,6 +86,45 @@ def product_id_graph(df, ax):
         logging.error(f"Error creating product ID graph: {e}")
     return df
 
+def target_anomalies(df):
+    failure_columns = ['TWF', 'HDF', 'PWF', 'OSF', 'RNF']
+    if not all(col in df.columns for col in failure_columns):
+        missing_cols = [col for col in failure_columns if col not in df.columns]
+        logging.error(f"Missing failure columns: {missing_cols}")
+        return df
+
+    try:
+        failure_mapping = {
+            'TWF': 'Tool Wear Failure',
+            'HDF': 'Heat Dissipation Failure',
+            'PWF': 'Power Failure',
+            'OSF': 'Overstrain Failure',
+            'RNF': 'Random Failure'
+        }
+
+        df['Failure Type'] = df[failure_columns].idxmax(axis=1).map(failure_mapping)
+        logging.info(f"Derived 'Failure Type' column:\n{df['Failure Type'].value_counts()}")
+
+        idx_RNF = df.loc[df['Failure Type'] == 'Random Failure'].index
+        logging.info(f"Indexes with Random Failures: {idx_RNF.tolist()}")
+        
+        features = [col for col in df.columns if df[col].dtype == 'float64' or col == 'Type']
+        logging.info(f"Relevant features: {features}")
+
+    except Exception as e:
+        logging.error(f"Error processing target anomalies: {e}")
+
+    return df
+
+def remove__rnf(df):
+    try:
+        idx_RNF = df.loc[df['Failure Type'] == 'Random Failure'].index
+        df.drop(idx_RNF, inplace=True)
+        logging.info(f"Removed Random Failures: {idx_RNF.tolist()}")
+    except Exception as e:
+        logging.error(f"Error removing Random Failures: {e}")
+    return df
+
 if __name__ == "__main__":
     file_path = "/home/abdullahalazmi/Downloads/predictive_maintenance/data/raw/kaggle_datasets/ai4i2020.csv"
 
@@ -95,11 +134,14 @@ if __name__ == "__main__":
             data = num_to_float(data)
             data = rename_columns(data)
             
-            fig, axes = plt.subplots(1, 2, figsize=(14, 7))
-            data = percentage_of_machines_by_type(data, axes[0])
-            data = product_id_graph(data, axes[1])
+            # fig, axes = plt.subplots(1, 2, figsize=(14, 7))
+            # data = percentage_of_machines_by_type(data, axes[0])
+            # data = product_id_graph(data, axes[1])
             
-            plt.tight_layout()
-            plt.show()
+            # plt.tight_layout()
+            # plt.show()
+
+            data = target_anomalies(data)
+            data = remove__rnf(data)
     else:
         logging.error(f"File not found: {file_path}")
