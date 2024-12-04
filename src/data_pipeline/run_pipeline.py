@@ -2,7 +2,7 @@ import os
 import argparse
 import logging
 import hashlib
-import pandas as pd 
+import pandas as pd
 from logger import setup_logging
 from data_loading import load_data, num_to_float, rename_columns
 from missing_data_analysis import global_percentage_of_removed_data, remove_inconsistent_failures
@@ -10,7 +10,6 @@ from missing_data_imputation import target_anomalies, remove_rnf
 from data_preprocessing import analyze_failure_relationship
 from data_visualization import percentage_of_machines_by_type, product_id_graph
 import matplotlib.pyplot as plt
-
 
 def verify_file(file_path, expected_hash=None):
     if not os.path.isfile(file_path):
@@ -23,11 +22,9 @@ def verify_file(file_path, expected_hash=None):
             raise ValueError("File hash does not match the expected hash!")
     return True
 
-
 def setup_output_directory(output_path):
     os.makedirs(output_path, exist_ok=True)
     return output_path
-
 
 def setup_logging_directory(output_path):
     log_dir = os.path.join(output_path, "logs")
@@ -43,7 +40,6 @@ def setup_logging_directory(output_path):
                 raise RuntimeError(f"Failed to set up logging in both '{log_dir}' and fallback directory '{fallback_log_dir}'. "
                                    f"Errors: {e}, {fallback_error}")
     return os.path.join(log_dir, "pipeline.log")
-
 
 def main(file_path, output_path, enable_visualizations=True):
     log_file = setup_logging_directory(output_path)
@@ -79,6 +75,7 @@ def main(file_path, output_path, enable_visualizations=True):
             product_id_graph(data, axes[1])
             plt.tight_layout()
             plt.show()
+            plt.pause(0.001)  # Keeps the GUI event loop active for real-time display
             logger.info("Visualizations displayed in real time.")
         except Exception as e:
             logger.warning(f"Failed to generate visualizations: {e}")
@@ -109,7 +106,6 @@ def main(file_path, output_path, enable_visualizations=True):
         logger.info(f"Processed data saved to '{output_file}'.")
     except Exception as e:
         logger.error(f"Failed to save processed data: {e}")
-
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run the predictive maintenance pipeline.")
