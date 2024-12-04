@@ -1,0 +1,12 @@
+2024-12-04 19:27:44,932 - INFO - Logging is configured.
+2024-12-04 19:27:44,933 - INFO - Logging initialized.
+2024-12-04 19:27:44,933 - INFO - File verified: /home/abdullahalazmi/Downloads/predictive_maintenance/data/raw/kaggle_datasets/ai4i2020.csv
+2024-12-04 19:27:44,964 - INFO - File loaded successfully.
+2024-12-04 19:27:44,964 - INFO - Loaded data with 10000 rows and 14 columns.
+2024-12-04 19:27:44,968 - INFO - Renamed columns: ['UDI', 'Product ID', 'Type', 'Air temperature', 'Process temperature', 'Rotational speed', 'Torque', 'Tool wear', 'Machine failure', 'TWF', 'HDF', 'PWF', 'OSF', 'RNF']
+2024-12-04 19:27:45,435 - INFO - Percentage of machines by type:
+Type
+L    60.00
+M    29.97
+H    10.03
+Name: proportion, dtype: float64
