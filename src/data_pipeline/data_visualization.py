@@ -22,7 +22,7 @@ def percentage_of_machines_by_type(df, ax):
 def product_id_graph(df, ax):
     try:
         if 'Product ID' in df.columns:
-            df['Product ID'] = df['Product ID'].str[1:].astype(float)
+            df['Product ID'] = df['Product ID'].str.extract(r'(\d+)').astype(float)  # Use raw string
             sns.histplot(data=df, x='Product ID', bins=20, kde=True, ax=ax)
             ax.set_title("Distribution of Product IDs")
             ax.set_xlabel("Product ID")

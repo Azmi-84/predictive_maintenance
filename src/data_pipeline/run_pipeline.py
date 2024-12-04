@@ -8,7 +8,7 @@ from data_loading import load_data, num_to_float, rename_columns
 from missing_data_analysis import global_percentage_of_removed_data, remove_inconsistent_failures
 from missing_data_imputation import target_anomalies, remove_rnf
 from data_preprocessing import analyze_failure_relationship
-from data_visualization import percentage_of_machines_by_type, product_id_graph
+from data_visualization import percentage_of_machines_by_type, product_id_graph, numeric_features_graph
 import matplotlib.pyplot as plt
 
 def verify_file(file_path, expected_hash=None):
@@ -76,6 +76,13 @@ def main(file_path, output_path, enable_visualizations=True):
             plt.tight_layout()
             plt.show()
             plt.pause(0.001)  # Keeps the GUI event loop active for real-time display
+            
+            fig, axes = plt.subplots(1, 1, figsize=(14, 7))
+            numeric_features_graph(data, axes)
+            plt.tight_layout()
+            plt.show()
+            plt.pause(0.001)  # Keeps the GUI event loop active for real-time display
+
             logger.info("Visualizations displayed in real time.")
         except Exception as e:
             logger.warning(f"Failed to generate visualizations: {e}")

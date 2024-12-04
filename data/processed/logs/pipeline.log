@@ -255,3 +255,96 @@ Name: count, dtype: int64
 2024-12-05 03:52:38,684 - INFO - Random=1, Machine=0: 0 occurrences. Rows: []
 2024-12-05 03:52:38,684 - INFO - Failure analysis: {'Random=1, Machine=0': {'count': 0, 'rows': []}}
 2024-12-05 03:52:38,857 - INFO - Processed data saved to '/home/abdullahalazmi/Downloads/predictive_maintenance/data/processed/processed_data.csv'.
+2024-12-05 03:58:17,294 - INFO - Logging is configured.
+2024-12-05 03:58:17,295 - INFO - Logging initialized.
+2024-12-05 03:58:17,295 - INFO - File verified: /home/abdullahalazmi/Downloads/predictive_maintenance/data/raw/kaggle_datasets/ai4i2020.csv
+2024-12-05 03:58:17,330 - INFO - File loaded successfully.
+2024-12-05 03:58:17,331 - INFO - Loaded data with 10000 rows and 14 columns.
+2024-12-05 03:58:17,334 - INFO - Renamed columns: ['UDI', 'Product ID', 'Type', 'Air temperature', 'Process temperature', 'Rotational speed', 'Torque', 'Tool wear', 'Machine failure', 'TWF', 'HDF', 'PWF', 'OSF', 'RNF']
+2024-12-05 03:58:17,688 - INFO - Percentage of machines by type:
+Type
+L    60.00
+M    29.97
+H    10.03
+Name: proportion, dtype: float64
+2024-12-05 03:58:25,647 - INFO - Visualizations displayed in real time.
+2024-12-05 03:58:25,665 - INFO - Derived 'Failure Type' column:
+Failure Type
+Tool Wear Failure           9698
+Heat Dissipation Failure     115
+Power Failure                 91
+Overstrain Failure            78
+Random Failure                18
+Name: count, dtype: int64
+2024-12-05 03:58:25,666 - INFO - Target anomalies identified and mapped.
+2024-12-05 03:58:25,674 - INFO - Removed Random Failures: 18 rows.
+2024-12-05 03:58:25,674 - INFO - Random failures removed from the dataset.
+2024-12-05 03:58:25,683 - INFO - Found 9 inconsistent rows to remove.
+2024-12-05 03:58:25,687 - INFO - Inconsistent failures removed from the dataset.
+2024-12-05 03:58:25,690 - INFO - Random=1, Machine=0: 0 occurrences. Rows: []
+2024-12-05 03:58:25,690 - INFO - Failure analysis: {'Random=1, Machine=0': {'count': 0, 'rows': []}}
+2024-12-05 03:58:25,695 - INFO - Percentage of rows with missing data: 0.000%
+2024-12-05 03:58:25,696 - INFO - Percentage of rows with missing data: 0.000%.
+2024-12-05 03:58:25,932 - INFO - Processed data saved to '/home/abdullahalazmi/Downloads/predictive_maintenance/data/processed/processed_data.csv'.
+2024-12-05 04:00:31,801 - INFO - Logging is configured.
+2024-12-05 04:00:31,801 - INFO - Logging initialized.
+2024-12-05 04:00:31,802 - INFO - File verified: /home/abdullahalazmi/Downloads/predictive_maintenance/data/raw/kaggle_datasets/ai4i2020.csv
+2024-12-05 04:00:31,840 - INFO - File loaded successfully.
+2024-12-05 04:00:31,840 - INFO - Loaded data with 10000 rows and 14 columns.
+2024-12-05 04:00:31,843 - INFO - Renamed columns: ['UDI', 'Product ID', 'Type', 'Air temperature', 'Process temperature', 'Rotational speed', 'Torque', 'Tool wear', 'Machine failure', 'TWF', 'HDF', 'PWF', 'OSF', 'RNF']
+2024-12-05 04:00:32,215 - INFO - Percentage of machines by type:
+Type
+L    60.00
+M    29.97
+H    10.03
+Name: proportion, dtype: float64
+2024-12-05 04:00:39,713 - WARNING - Failed to generate visualizations: numeric_features_graph() takes 1 positional argument but 2 were given
+2024-12-05 04:00:39,730 - INFO - Derived 'Failure Type' column:
+Failure Type
+Tool Wear Failure           9698
+Heat Dissipation Failure     115
+Power Failure                 91
+Overstrain Failure            78
+Random Failure                18
+Name: count, dtype: int64
+2024-12-05 04:00:39,731 - INFO - Target anomalies identified and mapped.
+2024-12-05 04:00:39,740 - INFO - Removed Random Failures: 18 rows.
+2024-12-05 04:00:39,740 - INFO - Random failures removed from the dataset.
+2024-12-05 04:00:39,748 - INFO - Found 9 inconsistent rows to remove.
+2024-12-05 04:00:39,752 - INFO - Inconsistent failures removed from the dataset.
+2024-12-05 04:00:39,754 - INFO - Random=1, Machine=0: 0 occurrences. Rows: []
+2024-12-05 04:00:39,755 - INFO - Failure analysis: {'Random=1, Machine=0': {'count': 0, 'rows': []}}
+2024-12-05 04:00:39,760 - INFO - Percentage of rows with missing data: 0.000%
+2024-12-05 04:00:39,760 - INFO - Percentage of rows with missing data: 0.000%.
+2024-12-05 04:00:39,989 - INFO - Processed data saved to '/home/abdullahalazmi/Downloads/predictive_maintenance/data/processed/processed_data.csv'.
+2024-12-05 04:02:33,492 - INFO - Logging is configured.
+2024-12-05 04:02:33,492 - INFO - Logging initialized.
+2024-12-05 04:02:33,493 - INFO - File verified: /home/abdullahalazmi/Downloads/predictive_maintenance/data/raw/kaggle_datasets/ai4i2020.csv
+2024-12-05 04:02:33,526 - INFO - File loaded successfully.
+2024-12-05 04:02:33,526 - INFO - Loaded data with 10000 rows and 14 columns.
+2024-12-05 04:02:33,528 - INFO - Renamed columns: ['UDI', 'Product ID', 'Type', 'Air temperature', 'Process temperature', 'Rotational speed', 'Torque', 'Tool wear', 'Machine failure', 'TWF', 'HDF', 'PWF', 'OSF', 'RNF']
+2024-12-05 04:02:33,872 - INFO - Percentage of machines by type:
+Type
+L    60.00
+M    29.97
+H    10.03
+Name: proportion, dtype: float64
+2024-12-05 04:03:29,660 - INFO - Visualizations displayed in real time.
+2024-12-05 04:03:29,676 - INFO - Derived 'Failure Type' column:
+Failure Type
+Tool Wear Failure           9698
+Heat Dissipation Failure     115
+Power Failure                 91
+Overstrain Failure            78
+Random Failure                18
+Name: count, dtype: int64
+2024-12-05 04:03:29,676 - INFO - Target anomalies identified and mapped.
+2024-12-05 04:03:29,684 - INFO - Removed Random Failures: 18 rows.
+2024-12-05 04:03:29,685 - INFO - Random failures removed from the dataset.
+2024-12-05 04:03:29,693 - INFO - Found 9 inconsistent rows to remove.
+2024-12-05 04:03:29,698 - INFO - Inconsistent failures removed from the dataset.
+2024-12-05 04:03:29,701 - INFO - Random=1, Machine=0: 0 occurrences. Rows: []
+2024-12-05 04:03:29,701 - INFO - Failure analysis: {'Random=1, Machine=0': {'count': 0, 'rows': []}}
+2024-12-05 04:03:29,706 - INFO - Percentage of rows with missing data: 0.000%
+2024-12-05 04:03:29,706 - INFO - Percentage of rows with missing data: 0.000%.
+2024-12-05 04:03:29,888 - INFO - Processed data saved to '/home/abdullahalazmi/Downloads/predictive_maintenance/data/processed/processed_data.csv'.
