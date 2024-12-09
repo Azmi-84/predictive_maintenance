@@ -11,45 +11,51 @@ from data_loading import load_data, num_to_float, rename_columns
 from missing_data_analysis import global_percentage_of_removed_data, remove_inconsistent_failures
 from data_visualization import percentage_of_machines_by_type, product_id_graph, numeric_features_graph
 
+
 def setup_logging_directory(output_path):
     log_dir = os.path.join(output_path, "logs")
-    if not os.path.exists(log_dir):
+    try:
+        os.makedirs(log_dir, exist_ok=True)
+    except Exception as e:
+        fallback_log_dir = os.path.expanduser("~/.logs/predictive_maintenance")
         try:
-            os.makedirs(log_dir, exist_ok=True)
-        except Exception as e:
-            fallback_log_dir = os.path.expanduser("~/.logs/predictive_maintenance")
-            try:
-                os.makedirs(fallback_log_dir, exist_ok=True)
-                log_dir = fallback_log_dir
-            except Exception as fallback_error:
-                raise RuntimeError(f"Failed to set up logging in both '{log_dir}' and fallback directory '{fallback_log_dir}'. "
-                                   f"Errors: {e}, {fallback_error}")
+            os.makedirs(fallback_log_dir, exist_ok=True)
+            log_dir = fallback_log_dir
+        except Exception as fallback_error:
+            raise RuntimeError(
+                f"Failed to set up logging in both '{log_dir}' and fallback directory '{fallback_log_dir}'. "
+                f"Errors: {e}, {fallback_error}"
+            )
     return os.path.join(log_dir, "pipeline.log")
 
-log_file = setup_logging_directory("/desired/log/directory")
-setup_logging(log_file=log_file)
-logger = logging.getLogger(__name__)
 
 def verify_file(file_path, expected_hash=None):
     if not os.path.isfile(file_path):
         raise FileNotFoundError(f"File not found: {file_path}")
 
     if expected_hash:
+        sha256 = hashlib.sha256()
         with open(file_path, "rb") as f:
-            file_hash = hashlib.sha256(f.read()).hexdigest()
+            for chunk in iter(lambda: f.read(4096), b""):
+                sha256.update(chunk)
+        file_hash = sha256.hexdigest()
         if file_hash != expected_hash:
             raise ValueError("File hash does not match the expected hash!")
     return True
+
 
 def setup_output_directory(output_path):
     os.makedirs(output_path, exist_ok=True)
     return output_path
 
-def main(file_path, output_path, enable_visualizations=True):
+
+def main(file_path, output_path, enable_visualizations=True, expected_hash=None):
+    log_file = setup_logging_directory(output_path)
+    logger = setup_logging(log_file)
     logger.info("Logging initialized.")
 
     try:
-        verify_file(file_path)
+        verify_file(file_path, expected_hash)
         logger.info(f"File verified: {file_path}")
     except Exception as e:
         logger.error(f"File verification failed: {e}")
@@ -66,20 +72,20 @@ def main(file_path, output_path, enable_visualizations=True):
     data = num_to_float(data)
     data = rename_columns(data)
 
-    requiered_numeric_features = ["Air Temperature", "Process Temperature", "Rotational Speed", "Torque", "Tool Wear"]
-
     if enable_visualizations:
         try:
             fig, axes = plt.subplots(1, 2, figsize=(14, 7), constrained_layout=True)
             percentage_of_machines_by_type(data, axes[0])
             product_id_graph(data, axes[1])
-            plt.tight_layout()
             plt.savefig(os.path.join(processed_data_dir, "visualization_summary.png"))
             plt.close()
 
             fig, ax = plt.subplots(figsize=(14, 7), constrained_layout=True)
-            numeric_features_graph(data, requiered_features=requiered_numeric_features)
-            plt.tight_layout()
+            numeric_features_graph(
+                data,
+                required_features=["Air Temperature", "Process Temperature", "Rotational Speed", "Torque", "Tool Wear"],
+                ax=ax
+            )
             plt.savefig(os.path.join(processed_data_dir, "numeric_features.png"))
             plt.close()
 
@@ -110,18 +116,19 @@ def main(file_path, output_path, enable_visualizations=True):
     except Exception as e:
         logger.error(f"Failed to save processed data: {e}")
 
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run the predictive maintenance pipeline.")
     parser.add_argument(
         "--file",
         type=str,
-        default="/home/abdullahalazmi/Downloads/predictive_maintenance/data/raw/kaggle_datasets/ai4i2020.csv",
+        default="../../data//raw/kaggle_datasets/ai4i2020.csv",
         help="Path to the input CSV file. Default: preconfigured file path."
     )
     parser.add_argument(
         "--output",
         type=str,
-        default="/home/abdullahalazmi/Downloads/predictive_maintenance/data/processed/",
+        default="../../data/processed/",
         help="Path to the output directory. Default: preconfigured output path."
     )
     parser.add_argument(
@@ -137,4 +144,5 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    main(file_path=args.file, output_path=args.output, enable_visualizations=args.visualize)
+    main(file_path=args.file, output_path=args.output, enable_visualizations=args.visualize, expected_hash=args.hash)
+ 
