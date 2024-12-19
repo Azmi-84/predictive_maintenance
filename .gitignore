@@ -1,8 +1,0 @@
-data/raw/kaggle_datasets/gearbox-fault-diagnosis-elaborated-datasets/raw/broken30hz.csv
-data/raw/kaggle_datasets/gearbox-fault-diagnosis-elaborated-datasets/raw/healthy30hz.csv
-data/raw/kaggle_datasets/gearbox-fault-diagnosis-elaborated-datasets/stdev/broken30hz_stdev_10.csv
-data/raw/kaggle_datasets/gearbox-fault-diagnosis-elaborated-datasets/stdev/broken30hz_stdev_100.csv
-data/raw/kaggle_datasets/gearbox-fault-diagnosis-elaborated-datasets/stdev/broken30hz_stdev_1000.csv
-data/raw/kaggle_datasets/gearbox-fault-diagnosis-elaborated-datasets/stdev/healthy30hz_stdev_10.csv
-data/raw/kaggle_datasets/gearbox-fault-diagnosis-elaborated-datasets/stdev/healthy30hz_stdev_1000.csv
-data/raw/kaggle_datasets/gearbox-fault-diagnosis-elaborated-datasets/stdev/healthy30hz_stdev_100.csv
